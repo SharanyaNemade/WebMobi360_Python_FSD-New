@@ -23,4 +23,5 @@ env/
 .env
 
 # Model artifacts (optional – read note below)
-*.pkl
+# *.pkl
+# !model/fraud_detect_model.pkl
