@@ -1,28 +1,65 @@
-# Python cache
+# =========================
+# Python cache & bytecode
+# =========================
 __pycache__/
 *.pyc
+*.pyo
 
-# Virtual environment
+# =========================
+# Virtual environments
+# =========================
 venv/
 env/
 
+# =========================
 # IDE / Editor files
+# =========================
 .idea/
 .vscode/
 
+# =========================
 # OS generated files
+# =========================
 .DS_Store
+Thumbs.db
 
-# Local databases
-*.db
-
+# =========================
 # Logs
+# =========================
 *.log
 
+# =========================
 # Environment variables
+# =========================
 .env
 
-# Model artifacts (optional – read note below)
+# =========================
+# Local / temp databases
+# =========================
+*.db
+
+# =========================
+# Uploads (keep folder, ignore files)
+# =========================
+uploads/*
+!uploads/.gitkeep
+
+# =========================
+# Data & archives (not for GitHub)
+# =========================
+archive/
+data/
+
+# =========================
+# ML model artifacts
+# =========================
 *.pkl
 !model/fraud_detect_model.pkl
 !model/preprocess.pkl
+
+# =========================
+# Python tooling
+# =========================
+.pytest_cache/
+.mypy_cache/
+.coverage
