@@ -137,8 +137,8 @@ def analyze_df(df):
 # @app.route("/home")
 @app.route("/")
 def home():
-    return redirect(url_for("home"))
-    # return render_template("home.html")
+    # return redirect(url_for("home.html"))
+    return render_template("home.html")
 
 @app.route("/manual")
 def manual_page():
