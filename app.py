@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask,redirect, url_for, render_template, request, jsonify
 import os
 import pickle, joblib, os, random, uuid
 import pandas as pd
@@ -54,10 +54,18 @@ socketio = SocketIO(
 
 
 # 🔥 runs once when app starts
-init_database()
+
+
+
+
+# You do NOT need this function at all in production.
+
+
+
+# init_database()
 
 # Load CSV data if needed
-import_transaction_history_if_needed()
+# import_transaction_history_if_needed()
 
 
 
@@ -65,9 +73,13 @@ import_transaction_history_if_needed()
 # @app.before_first_request
 
 
-def startup_tasks():
-    init_database()
-    import_transaction_history_if_needed()
+
+# You do NOT need this function at all in production.
+
+
+# def startup_tasks():
+#     init_database()
+#     import_transaction_history_if_needed()
 
 
 
@@ -122,9 +134,11 @@ def analyze_df(df):
 # ---------------- ROUTES ----------------
 
 
-@app.route("/home")
+# @app.route("/home")
+@app.route("/")
 def home():
-    return render_template("home.html")
+    return redirect(url_for("home"))
+    # return render_template("home.html")
 
 @app.route("/manual")
 def manual_page():
